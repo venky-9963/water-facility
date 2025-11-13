@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Facility and Awareness Project | By Venky</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.4s ease;
+    }
+
+    body {
+      background: linear-gradient(135deg, #00131c, #001e28, #003640);
+      color: #d6f3ff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 10px;
+      background: rgba(0, 25, 35, 0.7);
+      border-bottom: 1px solid rgba(0,255,255,0.2);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #00eaff;
+      text-shadow: 0 0 15px #00eaff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .nav button {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      color: #80f5ff;
+      font-size: 1rem;
+      padding: 12px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    }
+
+    .nav button.active,
+    .nav button:hover {
+      background: #00eaff;
+      color: #002229;
+      box-shadow: 0 0 25px #00eaff, 0 0 50px #00eaff66;
+    }
+
+    .content-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #cdeeff;
+      text-align: left;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .content-box strong {
+      color: #00eaff;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #88dfff;
+      font-size: 0.9rem;
+      margin-top: 50px;
+    }
+
+    footer span {
+      color: #00eaff;
+    }
+
+    /* ✅ Fixed image styling */
+    .img {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 10px;
+      border: 2px solid #00eaff;
+      box-shadow: 0 0 15px #00eaff66;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 25px #00eaff;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>💧 WATER FACILITIES AND DRINKING WATER AVAILABILITY 💧</h1>
+  </header>
+
+  <div class="container">
+    <div class="nav">
+      <button class="active" onclick="showContent(event, 'intro')">Introduction</button>
+      <button onclick="showContent(event, 'types')">Types of Water</button>
+      <button onclick="showContent(event, 'act1')">Activity 1</button>
+      <button onclick="showContent(event, 'act2')">Activity 2</button>
+      <button onclick="showContent(event, 'act3')">Activity 3</button>
+      <button onclick="showContent(event, 'act4')">Activity 4</button>
+      <button onclick="showContent(event, 'act5')">Activity 5</button>
+      <button onclick="showContent(event, 'conclusion')">Conclusion</button>
+    </div>
+
+    <div id="content" class="content-box">
+      <p>This project focuses on assessing water facilities, understanding water quality, and raising awareness about safe water usage in local communities. It includes surveys, field visits, awareness programs, and community participation to improve water access, health, and hygiene.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 <span>WATER FACILITIES AND DRINKING WATER AVAILABILITY</span> | Created by Team A4
+  </footer>
+
+  <script>
+    const contents = {
+      intro: `<p>This project focuses on assessing water facilities, understanding water quality, and raising awareness about safe water usage in local communities. It includes surveys, field visits, awareness programs, and community participation to improve water access, health, and hygiene.</p>`,
+
+      types: `<p><strong>1.</strong> Surface Water – Rivers, lakes, ponds, and reservoirs.<br>
+              <strong>2.</strong> Ground Water – Wells and borewells used for domestic and agricultural purposes.<br>
+              <strong>3.</strong> Rainwater – Direct rainfall and harvested rainwater for reuse.<br>
+              <strong>4.</strong> Desalinated Water – Purified sea water used in coastal regions.<br>
+              <strong>5.</strong> Recycled Water – Treated wastewater reused for irrigation and cleaning.</p>
+              <div class="image-container">
+                <img src="images/type1.jpg" class="img" alt="Surface Water">
+                <img src="images/type2.jpg" class="img" alt="Ground Water">
+                <img src="images/type3.jpg" class="img" alt="Rainwater">
+              </div>`,
+
+      act1: `<p><strong>Week 1:</strong> Conducted a detailed survey in Naidupalem village and collected information on existing water facilities.<br>
+             <strong>Week 2:</strong> Interacted with local residents to understand water access, availability, and usage issues.<br>
+             <strong>Week 3:</strong> Observed water storage systems and infrastructure.<br>
+             <strong>Week 4:</strong> Discussed supply challenges with local community members.<br>
+             <strong>Week 5:</strong> Identified areas with irregular water supply.<br>
+             <strong>Week 6:</strong> Summarized survey findings for improvement plans.</p>
+             <div class="image-container">
+               <img src="images/act1-1.jpg" class="img" alt="">
+               <img src="images/act1-2.jpg" class="img" alt="">
+               <img src="images/act1-3.jpg" class="img" alt="">
+             </div>`,
+
+      act2: `<p><strong>Week 1:</strong> We went to all the shops and did a survey on drinking water bottles.<br>
+             <strong>Week 2:</strong> Collected detailed feedback from villagers about contaminated water and health problems.<br>
+             <strong>Week 3:</strong> Observed drinking water sources and local purification methods carefully in shops.<br>
+             <strong>Week 4:</strong> Discussed about strong connection between water bottle quality and health-related diseases in residents.<br>
+             <strong>Week 5:</strong> Identified areas with non-quality drinking water bottles and serious health concerns.<br>
+             <strong>Week 6:</strong> Prepared survey data for health awareness initiatives.</p>
+             <div class="image-container">
+               <img src="images/act2-1.jpg" class="img" alt="">
+               <img src="images/act2-2.jpg" class="img" alt="">
+               <img src="images/act2-3.jpg" class="img" alt="">
+             </div>`,
+
+      act3: `<p><strong>Week 1:</strong> Planned an awareness programme on tanker water facilities.<br>
+             <strong>Week 2:</strong> Educated residents on proper usage and benefits of tanker water.<br>
+             <strong>Week 3:</strong> Explained importance of purification and storage.<br>
+             <strong>Week 4:</strong> Encouraged active participation in awareness sessions.<br>
+             <strong>Week 5:</strong> Reinforced lessons on safe water usage.<br>
+             <strong>Week 6:</strong> Observed community improvement in understanding water systems.</p>
+             <div class="image-container">
+               <img src="images/act3-1.jpg" class="img" alt="">
+               <img src="images/act3-2.jpg" class="img" alt="">
+               <img src="images/act3-3.jpg" class="img" alt="">
+             </div>`,
+
+      act4: `<p><strong>Week 1:</strong> Visited the water plant in North Rajupalem and observed the complete water purification process carefully.<br>
+             <strong>Week 2:</strong> Interacted with the plant manager to understand water facility management and operational challenges.<br>
+             <strong>Week 3:</strong> Collected feedback from staff on problems faced in water distribution and supply.<br>
+             <strong>Week 4:</strong> Prepared a practical improvement plan to enhance water plant operations efficiently.<br>
+             <strong>Week 5:</strong> Implemented improvements and monitored results for better water service to the community.<br>
+             <strong>Week 6:</strong> Noted improved awareness among villagers.</p>
+             <div class="image-container">
+               <img src="images/act4-1.jpg" class="img" alt="">
+               <img src="images/act4-2.jpg" class="img" alt="">
+               <img src="images/act4-3.jpg" class="img" alt="">
+             </div>`,
+
+      act5: `<p><strong>Week 1:</strong> Planned an awareness programme in North Rajupalem on water safety and conservation issues.<br>
+             <strong>Week 2:</strong> Educated families about water conservation techniques and safe daily usage methods.<br>
+             <strong>Week 3:</strong> Demonstrated practical methods to preserve water effectively in households.<br>
+             <strong>Week 4:</strong> Discussed water quality and its significant impact on human health and hygiene.<br>
+             <strong>Week 5:</strong> Encouraged residents to act as "water warriors" to spread awareness in their community.<br>
+             <strong>Week 6:</strong> Conducted awareness on safe water usage and plant operations.</p>
+             <div class="image-container">
+               <img src="images/act5-1.jpg" class="img" alt="">
+               <img src="images/act5-2.jpg" class="img" alt="">
+               <img src="images/act5-3.jpg" class="img" alt="">
+             </div>`,
+
+      conclusion: `<p>In conclusion, our Community Service Project helped us study and understand the
+      water facilities and drinking water availability in Naidupalem and North Rajupalem
+      villages. We conducted surveys, interacted with residents, and observed water
+      infrastructure to identify challenges in water supply and quality. Through awareness
+      programmes, we educated the community on safe drinking water, tanker and water
+      plant facilities, and water conservation practices. The active participation of residents
+      showed their interest in improving water usage habits. This project highlighted the
+      link between water quality and health issues in rural areas. It also provided us with
+      valuable practical experience in community engagement and public health education.
+      Overall, the project emphasized the importance of safe, clean, and sustainable water
+      resources for the well-being of the community.</p>`
+    };
+
+    function showContent(event, key) {
+      document.getElementById('content').innerHTML = contents[key];
+      document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
